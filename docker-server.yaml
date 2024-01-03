@@ -1,13 +1,10 @@
 ---
-Parameters:
-  UserData:
-    Type: String
 Outputs:
-  Docker-serverPublicIp:
-    Description: Docker-server Public IP
-    Value: !GetAtt Docker-server.PublicIp
+  DockerServerPublicIp:
+    Description: DockerServer Public IP
+    Value: !GetAtt DockerServer.PublicIp
     Export:
-      Name: !Sub "${AWS::StackName}-Docker-server-PublicIp"
+      Name: !Sub "${AWS::StackName}-DockerServer-PublicIp"
 Resources:
   myVPC:
     Type: AWS::EC2::VPC
@@ -80,7 +77,7 @@ Resources:
           FromPort: 0
           ToPort: 65535
           CidrIp: 0.0.0.0/0
-  Docker-serverENI:
+  DockerServerENI:
     Type: AWS::EC2::NetworkInterface
     Properties:
        Tags:
@@ -94,7 +91,7 @@ Resources:
        SubnetId: 
         Ref: mySubnet
        PrivateIpAddress: 10.0.0.50
-  Docker-server: 
+  DockerServer: 
     Type: AWS::EC2::Instance
     Properties: 
       ImageId: "ami-098940df4d3292e9a"
@@ -107,12 +104,12 @@ Resources:
           SubnetId: 
             Ref: "mySubnet"
       InstanceType: t3.small
-  Docker-serverENIAttach:
+  DockerServerENIAttach:
      Type: AWS::EC2::NetworkInterfaceAttachment
      Properties:
         DeleteOnTermination: True
         InstanceId:
-           Ref: Docker-server
+           Ref: DockerServer
         NetworkInterfaceId:
-           Ref: Docker-serverENI
+           Ref: DockerServerENI
         DeviceIndex: 1
