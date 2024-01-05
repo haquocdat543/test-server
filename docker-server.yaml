@@ -94,7 +94,7 @@ Resources:
   DockerServer: 
     Type: AWS::EC2::Instance
     Properties: 
-      ImageId: "ami-098940df4d3292e9a"
+      ImageId: "ami-07c589821f2b353aa"
       KeyName: "Window2"
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
