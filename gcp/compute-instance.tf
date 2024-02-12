@@ -7,7 +7,7 @@ resource "google_compute_instance" "master" {
 
   boot_disk {
     initialize_params {
-      image = "debian-cloud/debian-11"
+      image = "centos-cloud/centos-stream-9"
       labels = {
         my_label = "value"
       }
