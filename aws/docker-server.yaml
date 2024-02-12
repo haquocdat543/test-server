@@ -94,7 +94,7 @@ Resources:
   DockerServer: 
     Type: AWS::EC2::Instance
     Properties: 
-      ImageId: "ami-07c589821f2b353aa"
+      ImageId: "ami-0b5c74e235ed808b9"
       KeyName: "Window2"
       NetworkInterfaces: 
         - AssociatePublicIpAddress: "true"
@@ -103,7 +103,7 @@ Resources:
             - Ref: "mySG"
           SubnetId: 
             Ref: "mySubnet"
-      InstanceType: t3.small
+      InstanceType: t2.micro
   DockerServerENIAttach:
      Type: AWS::EC2::NetworkInterfaceAttachment
      Properties:

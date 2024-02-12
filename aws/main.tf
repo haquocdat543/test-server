@@ -81,7 +81,7 @@ resource "aws_network_interface" "Master" {
 
 # Assign an elastic IP to the network interface created in step 7
 resource "aws_eip" "Master" {
-  domain                    = "vpc"
+  domain = "vpc"
 }
 
 # Associate EIP to EC2 instances ENI
