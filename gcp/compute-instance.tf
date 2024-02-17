@@ -25,7 +25,7 @@ resource "google_compute_instance" "master" {
   }
 
   metadata = {
-    ssh-keys = var.ssh-key
+    ssh-keys = var.ssh_key
   }
 
   metadata_startup_script = file("./scripts/rbmq.sh")
