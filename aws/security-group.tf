@@ -20,7 +20,7 @@ resource "aws_security_group" "ProdSecurityGroup" {
   }
 
   tags = {
-    Name = "AllowAllTraffic"
+    Name = "Test-server-allow-all-traffics-${terraform.workspace}"
   }
 }
 

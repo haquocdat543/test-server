@@ -18,6 +18,6 @@ resource "aws_instance" "Master" {
   }
 
   tags = {
-    "Name" = "Master"
+    "Name" = "Test-server-${terraform.workspace}"
   }
 }

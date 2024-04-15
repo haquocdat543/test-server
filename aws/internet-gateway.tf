@@ -3,6 +3,6 @@ resource "aws_internet_gateway" "prod_gw" {
   vpc_id = aws_vpc.prod-vpc.id
 
   tags = {
-    "Name" = "VpcIGW"
+    "Name" = "Test-Server-VpcIGW-${terraform.workspace}"
   }
 }

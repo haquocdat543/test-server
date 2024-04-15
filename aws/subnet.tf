@@ -5,7 +5,7 @@ resource "aws_subnet" "ProdSubnet" {
   availability_zone = "ap-northeast-1a"
 
   tags = {
-    Name = "ProdSubnet"
+    Name = "Test-server-subnet-${terraform.workspace}"
   }
 }
 

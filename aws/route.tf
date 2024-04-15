@@ -7,6 +7,6 @@ resource "aws_route_table" "ProdRouteTable" {
     gateway_id = aws_internet_gateway.prod_gw.id
   }
   tags = {
-    Name = "Prod_RouteTable"
+    Name = "${terraform.workspace}"
   }
 }
