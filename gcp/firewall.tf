@@ -1,5 +1,5 @@
 resource "google_compute_firewall" "allow-all_firewall" {
-  name    = "allow-all-firewall"
+  name    = "allow-all-firewall-${terraform.workspace}"
   network = google_compute_network.vpc_network.name
 
   allow {

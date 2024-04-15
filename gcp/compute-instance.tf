@@ -1,5 +1,5 @@
 resource "google_compute_instance" "master" {
-  name         = "master-instance"
+  name         = "master-instance-${terraform.workspace}"
   machine_type = "n2-standard-2"
   zone         = "asia-northeast1-a"
 
